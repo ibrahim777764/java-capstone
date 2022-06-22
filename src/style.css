@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgb(60, 148, 139);
+  height: 80px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  font-size: medium;
+  width: 60%;
+}
+
+.nav-item {
+  padding: 10px 5px 10px 5px;
+}
+
+.nav-item:hover {
+  background-color: rgb(20, 73, 68);
+  color: white;
+  cursor: pointer;
+}
