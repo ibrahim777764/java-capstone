@@ -14,9 +14,11 @@
 }
 
 nav {
-  background-color: rgb(60, 148, 139);
+  background-color: rgb(100, 37, 37);
   height: 80px;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0);
 }
+
 
 ul {
   list-style: none;
@@ -33,7 +35,7 @@ ul {
 }
 
 .nav-item:hover {
-  background-color: rgb(20, 73, 68);
+  background-color: rgb(70, 37, 25);
   color: white;
   cursor: pointer;
 }
@@ -42,10 +44,11 @@ ul {
 .footer {
   width: 100%;
   height: 80px;
-  background-color: rgb(60, 148, 139);
+  background-color:  rgb(100, 37, 37);
   padding: 15px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0);
 }
