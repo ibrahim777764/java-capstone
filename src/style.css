@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: rgb(20, 73, 68);
 }
 
 .wrapper {
@@ -14,12 +15,11 @@
 }
 
 nav {
-  background-color: rgb(100, 37, 37);
+  background-color: rgb(20, 73, 68);
   height: 80px;
-  box-shadow: 10px 10px 5px rgb(0, 0, 0);
 }
 
-ul {
+nav ul {
   list-style: none;
   padding: 0;
   display: flex;
@@ -34,7 +34,7 @@ ul {
 }
 
 .nav-item:hover {
-  background-color: rgb(70, 37, 25);
+  background-color: rgb(173, 200, 198);
   color: white;
   cursor: pointer;
 }
@@ -43,11 +43,48 @@ ul {
 .footer {
   width: 100%;
   height: 80px;
-  background-color: rgb(100, 37, 37);
+  background-color: rgb(255, 255, 255);
   padding: 15px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+.show-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-row-gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.show-item {
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  width: 250px;
+  transform: translateZ(-40px);
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.6, 0.84, 0.44, 1);
+}
+
+.show-item:hover {
+  transform: translateZ(0);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.show-item img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+figcaption {
+  padding: 10px 10px 20px 10px;
+}
+
+figure {
+  border: 5px solid white;
 }
