@@ -8,5 +8,5 @@ export default class TVShowApp {
     const shows = await tvMazeApi.getShows(1);
     console.log(shows);
     Renderer.displayShows(shows);
-  
+  }
 }
