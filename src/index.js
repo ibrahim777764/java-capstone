@@ -1,6 +1,7 @@
 import "./style.css";
 import TVShowApp from './App';
-window.addEventListener("load", () => {
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+window.addEventListener("DOMContentLoaded", () => {
     
     TVShowApp.initialize();
     
