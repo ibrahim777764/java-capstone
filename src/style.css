@@ -281,6 +281,7 @@ figure {
   flex-direction: column;
   font-size: 12px;
   font-weight: 600;
+  
 }
 
 .comments-container .comment {
@@ -295,6 +296,8 @@ figure {
   width: 1200px;
   text-align: center;
   border: 1px solid #888;
+  overflow: auto;
+max-height: 100vh;
 }
 
 .my-form {
