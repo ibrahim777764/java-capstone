@@ -8,7 +8,8 @@ It is a single page application named ibnas , we are fetching the tvMazaAPI to g
 ## Screenshot of the Project
  
 
-file:///home/ibrahim/Documents/java-java/java-capstone/dist/sss.png
+![screenshot](./dist/sss.png)
+
 
 
 # Built With
