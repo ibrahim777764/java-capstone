@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import TVShowApp from '../App';
 
 const commentModal = async (showId, shows) => {
