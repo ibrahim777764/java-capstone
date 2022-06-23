@@ -1,8 +1,8 @@
-import TVShowApp from "../App";
+// eslint-disable-next-line import/no-unresolved
+import TVShowApp from '../App';
 
 const reservationModal = async (showId, shows) => {
-
-  const show = shows.find(t => t.id === parseInt(showId));
+  const show = shows.find((t) => t.id === parseInt(showId, 10));
 
   const reservationModalView = document.getElementById('reservation-modal');
   reservationModalView.style.display = 'block';
@@ -17,7 +17,7 @@ const reservationModal = async (showId, shows) => {
 
   showIdEl.value = showId;
 
-  closeEl.addEventListener('click', () => {reservationModalView.style.display = 'none';});
+  closeEl.addEventListener('click', () => { reservationModalView.style.display = 'none'; });
 
   imgEl.src = show.image;
   showTitleEl.textContent = show.title;
@@ -26,13 +26,13 @@ const reservationModal = async (showId, shows) => {
   const response = await TVShowApp.getReservations(showId);
   reservationCounter.textContent = `(${typeof response.length === 'undefined' ? 0 : response.length})`;
 
-  if (response.length > 0){
-    reservationList.innerHTML = "";
-      response.forEach(reservation => {
-        reservationList.innerHTML += `<li>Date: ${reservation.username}:<p>From: ${reservation.date_start} To: ${reservation.date_end}</p></li>`;
-      });
+  if (response.length > 0) {
+    reservationList.innerHTML = '';
+    response.forEach((reservation) => {
+      reservationList.innerHTML += `<li>Date: ${reservation.username}:<p>From: ${reservation.date_start} To: ${reservation.date_end}</p></li>`;
+    });
   } else {
-    reservationList.innerHTML = "There are no Reservations for this show!";
+    reservationList.innerHTML = 'There are no Reservations for this show!';
   }
-}
+};
 export default reservationModal;

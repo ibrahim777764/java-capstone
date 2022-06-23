@@ -1,12 +1,12 @@
-import TVShowApp from "../App";
+// eslint-disable-next-line import/no-unresolved
+import TVShowApp from '../App';
 
 const commentModal = async (showId, shows) => {
-  
-  const show = shows.find(t => t.id === parseInt(showId));
-  
+  const show = shows.find((t) => t.id === parseInt(showId, 10));
+
   const commentModalView = document.getElementById('comment-modal');
   commentModalView.style.display = 'block';
-  
+
   const imgEl = commentModalView.querySelector('#show-image');
   const showTitleEl = commentModalView.querySelector('.movie-info #title');
   const showSummaryEl = commentModalView.querySelector('.movie-info #movie-summary');
@@ -16,8 +16,8 @@ const commentModal = async (showId, shows) => {
   const showIdEl = commentModalView.querySelector('form #show_id');
   showIdEl.value = showId;
 
-  closeEl.addEventListener('click', (ev) => {commentModalView.style.display = 'none';})
-  
+  closeEl.addEventListener('click', () => { commentModalView.style.display = 'none'; });
+
   imgEl.src = show.image;
   showTitleEl.textContent = show.title;
   showSummaryEl.innerHTML = show.summary;
@@ -25,14 +25,15 @@ const commentModal = async (showId, shows) => {
   const response = await TVShowApp.getComments(showId);
   commentCounter.textContent = `(${typeof response.length === 'undefined' ? 0 : response.length})`;
 
+  // eslint-disable-next-line space-before-blocks
   if (response.length > 0){
-  commentList.innerHTML = "";
-    response.forEach(comment => {
+    commentList.innerHTML = '';
+    response.forEach((comment) => {
       commentList.innerHTML += `<li>Date: ${comment.creation_date}:<p> ${comment.comment}</p> - By: ${comment.username}</li>`;
     });
-  }else{
-    commentList.innerHTML = "There are no Comments for this show!";
+  } else {
+    commentList.innerHTML = 'There are no Comments for this show!';
   }
-}
+};
 
 export default commentModal;
