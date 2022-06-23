@@ -24,7 +24,7 @@ const commentModal = async (showId, shows) => {
   const response = await TVShowApp.getComments(showId);
   commentCounter.textContent = `(${typeof response.length === 'undefined' ? 0 : response.length})`;
 
-  // eslint-disable-next-line space-before-blocks
+ 
   if (response.length > 0){
     commentList.innerHTML = '';
     response.forEach((comment) => {
