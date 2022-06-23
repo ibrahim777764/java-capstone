@@ -9,15 +9,38 @@
 
 .wrapper {
   max-width: 1400px;
+  background-color: rgb(32, 15, 15);
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
+.logo-img {
+  width: 10%;
+  border-radius: 50%;
+  margin-left: 20px;
+  animation: rotation 8s infinite linear;
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 nav {
   background-color: rgb(60, 148, 139);
-  height: 80px;
+  height: 90px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -31,7 +54,11 @@ nav ul {
 }
 
 .nav-item {
-  padding: 10px 5px 10px 5px;
+  padding: 10px 30px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  transition: all ease 0.5s;
 }
 
 .nav-item:hover {
@@ -48,30 +75,34 @@ nav ul {
   padding: 15px;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  color: white;
 }
 
 .show-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-row-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 34px;
+  margin-right: 45px;
   list-style: none;
   align-items: center;
 }
 
 .show-item {
-  position: relative;
   perspective: 1000px;
-  width: 250px;
-  transform: translateZ(-40px);
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform-style: preserve-3d;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.6, 0.84, 0.44, 1);
+  transition: transform ease-in-out 0.5s;
 }
 
 .show-item:hover {
-  transform: translateZ(0);
+  transform: scale(1.1);
+  z-index: 1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -79,6 +110,11 @@ nav ul {
   object-fit: fill;
   width: 100%;
   height: 100%;
+}
+
+.my-title {
+  font-weight: bold;
+  font-size: 15px;
 }
 
 figcaption {
@@ -89,6 +125,7 @@ figcaption {
 
 figcaption .likebutton {
   width: 30px !important;
+  height: 30px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -100,7 +137,15 @@ figcaption .likebutton:hover {
 }
 
 figure {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
   border: 5px solid white;
+  height: 500px;
+}
+
+.btn {
+  margin-bottom: 10px;
 }
 
 .card-comment-btn {
@@ -112,6 +157,28 @@ figure {
   font-size: medium;
   margin-left: 40px;
   padding: 25px 0 25px 0;
+  color: white;
+}
+
+#reservation-show-image {
+  width: 40%;
+}
+
+#reservation-list,
+#comment-list {
+  list-style: none;
+  font-weight: bold;
+  border: 2px solid rgb(73, 72, 72);
+  width: 50%;
+  margin: 0 auto;
+}
+
+#reservation-list li:nth-child(odd) {
+  background-color: rgb(209, 202, 202);
+}
+
+#comment-list li:nth-child(odd) {
+  background-color: rgb(209, 202, 202);
 }
 
 /* modal css */
@@ -136,13 +203,14 @@ figure {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+
+  /* overflow: auto; */
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .backshadow .modal {
-  width: 95%;
+  width: 70%;
   height: 90vh;
   background-color: #fff;
   position: relative;
@@ -207,7 +275,7 @@ figure {
 .comments-container {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   font-size: 12px;
@@ -220,16 +288,39 @@ figure {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
+  padding: 60px;
+  margin: 40px;
+  margin-right: 100px;
+  width: 200px;
+  text-align: center;
   border: 1px solid #888;
-  width: 80%;
+}
+
+.my-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-form input,
+textarea {
+  width: 30%;
+  align-self: center;
+  margin-bottom: 10px;
+  border: 2px solid #000;
+}
+
+.my-form button {
+  margin-top: 10px;
+  width: 30%;
+  align-self: center;
 }
 
 /* The Close Button */
 .close {
+  position: relative;
+  left: 45%;
+  bottom: 10%;
   color: #aaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
 }
