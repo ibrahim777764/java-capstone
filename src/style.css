@@ -4,18 +4,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(20, 73, 68);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 nav {
-  background-color: rgb(20, 73, 68);
+  background-color: rgb(60, 148, 139);
   height: 80px;
 }
 
@@ -34,7 +35,7 @@ nav ul {
 }
 
 .nav-item:hover {
-  background-color: rgb(173, 200, 198);
+  background-color: rgb(20, 73, 68);
   color: white;
   cursor: pointer;
 }
@@ -43,7 +44,7 @@ nav ul {
 .footer {
   width: 100%;
   height: 80px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(60, 148, 139);
   padding: 15px;
   margin-top: 20px;
   display: flex;
@@ -62,7 +63,6 @@ nav ul {
 .show-item {
   position: relative;
   perspective: 1000px;
-  cursor: pointer;
   width: 250px;
   transform: translateZ(-40px);
   transform-style: preserve-3d;
@@ -82,9 +82,168 @@ nav ul {
 }
 
 figcaption {
+  display: flex;
+  justify-content: space-between;
   padding: 10px 10px 20px 10px;
+}
+
+figcaption .likebutton {
+  width: 30px !important;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+figcaption .likebutton:hover {
+  width: 30px !important;
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 figure {
   border: 5px solid white;
+}
+
+.card-comment-btn {
+  background-color: rgb(60, 148, 139) !important;
+}
+
+.show-count {
+  font-weight: bold;
+  font-size: medium;
+  margin-left: 40px;
+  padding: 25px 0 25px 0;
+}
+
+/* modal css */
+.backshadow {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 50%);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.backshadow .modal {
+  width: 95%;
+  height: 90vh;
+  background-color: #fff;
+  position: relative;
+  padding: 16px;
+  border: 1px solid #dfe1e6;
+  box-shadow: 0 48px 48px rgba(37, 47, 137, 8%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.backshadow .modal .img-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.backshadow .modal .img-div .img {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-title {
+  margin-top: 10px;
+}
+
+.movie-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.cross {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+}
+
+.comments-heading {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.comment-form {
+  width: 100%;
+}
+
+.comment-form .custom-inputs {
+  margin-bottom: 10px;
+}
+
+.comments-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.comments-container .comment {
+  margin-bottom: 5px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .backshadow .modal {
+    width: 80%;
+    height: 631px;
+  }
 }
