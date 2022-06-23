@@ -1,3 +1,4 @@
+[](https://img.shields.io/badge/Microverse-blueviolet)
 # java-capstone
 
 
@@ -5,8 +6,7 @@ It is a single page application named ibnas , we are fetching the tvMazaAPI to g
 
 ## Screenshot of the Project
  
- x-special/nautilus-clipboard
-copy
+
 file:///home/ibrahim/Documents/java-java/java-capstone/dist/sss.png
 
 
